@@ -1365,13 +1365,21 @@
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
     const message = [
-      'Bonjour Shané, je souhaite créer un bouquet personnalisé.',
+      'Bonjour Shané,',
+      '',
+      'Je souhaite créer un bouquet personnalisé.',
+      '',
+      '--- Ma demande ---',
       `Prénom : ${formData.get('name')}`,
-      `Mon numéro : ${formData.get('phone')}`,
+      `Téléphone : ${formData.get('phone')}`,
       `Occasion : ${formData.get('occasion')}`,
-      `Taille : ${formData.get('size')}`,
-      `Personnalisation : ${formData.get('details') || 'A préciser ensemble'}`,
-      `Photo du bouquet : ${selectedBouquetImage.src}`
+      `Taille souhaitée : ${formData.get('size')}`,
+      `Bouquet choisi : ${selectedBouquetLabel.textContent || 'Création sur mesure'}`,
+      `Personnalisation : ${formData.get('details') || 'À préciser ensemble'}`,
+      '',
+      'Merci, je reste disponible pour échanger sur les détails.',
+      '',
+      'Shané - Made to be remembered.'
     ].join('\n');
     window.open(`https://wa.me/2290141754119?text=${encodeURIComponent(message)}`, '_blank', 'noopener');
   });
