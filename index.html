@@ -1426,7 +1426,7 @@
     collectionGrid.innerHTML = products.map((product) => `<article class="collection-card" data-size="${escapeHtml(product.size)}" data-occasion="${escapeHtml(product.occasion)}" data-bouquet="${escapeHtml(product.name)}" data-image="${escapeHtml(product.image)}">
       <div class="collection-visual"><img src="${escapeHtml(product.image)}" alt="${escapeHtml(product.name)}" loading="lazy"></div>
       <p class="card-price">${escapeHtml(product.name)}</p>
-      <div class="card-tags"><span>${escapeHtml(product.size.split(' - ')[0])}</span><span>${escapeHtml(product.price)}</span><span>${escapeHtml(product.occasion)}</span></div>
+      <div class="card-tags"><span>${escapeHtml(product.size.split(' . ')[0])}</span><span>${escapeHtml(product.price.split(' . ')[0])}</span><span>${escapeHtml(product.occasion)}</span></div>
       <a class="card-link btn btn-outline" href="#commande">Personnaliser ce bouquet</a>
     </article>`).join('');
     document.querySelector('.gallery-grid').innerHTML = products.map((product) => `<figure>
